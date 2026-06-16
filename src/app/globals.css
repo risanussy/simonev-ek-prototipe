@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-plus-jakarta);
+  --font-display: var(--font-ibm-plex-sans);
+
+  --color-background: #f4f7fb;
+  --color-foreground: #10243d;
+  --color-card: #ffffff;
+  --color-card-foreground: #10243d;
+  --color-muted: #e9eff6;
+  --color-muted-foreground: #5f7086;
+  --color-border: rgba(16, 36, 61, 0.1);
+  --color-input: rgba(16, 36, 61, 0.08);
+  --color-primary: #123a68;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #16805d;
+  --color-secondary-foreground: #ffffff;
+  --color-accent: #d9efe6;
+  --color-accent-foreground: #114c39;
+  --color-success: #16805d;
+  --color-warning: #d59d19;
+  --color-danger: #cc4f4f;
+  --color-neutral: #7a8798;
+  --shadow-panel: 0 20px 45px rgba(13, 31, 53, 0.08);
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(22, 128, 93, 0.14), transparent 32%),
+    radial-gradient(circle at top right, rgba(18, 58, 104, 0.12), transparent 38%),
+    linear-gradient(180deg, #f8fbff 0%, #f3f7fb 48%, #edf3f9 100%);
+  color: var(--color-foreground);
+  font-family: var(--font-plus-jakarta), sans-serif;
+}
+
+::selection {
+  background: rgba(18, 58, 104, 0.18);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.84);
+  backdrop-filter: blur(18px);
+}
+
+.mesh-surface {
+  background:
+    radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.22), transparent 28%),
+    radial-gradient(circle at 82% 78%, rgba(79, 201, 160, 0.18), transparent 24%),
+    linear-gradient(145deg, #12345e 0%, #0f2746 48%, #145f57 100%);
+}
+
+.spotlight-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.spotlight-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.16), transparent 34%);
+  pointer-events: none;
+}
+
+.page-shell {
+  animation: fade-up 0.5s ease-out;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
