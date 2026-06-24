@@ -15,8 +15,13 @@ const ibmPlexSans = IBM_Plex_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "SIMONEV Ekonomi Subang",
-  description: "Sistem Monitoring dan Pengendalian Program Pembangunan Ekonomi Berbasis Digital",
+  title: "spectra",
+  description: "Platform monitoring program dan dashboard operasional spectra.",
+  icons: {
+    icon: "/branding/logo.jpg",
+    shortcut: "/branding/logo.jpg",
+    apple: "/branding/logo.jpg",
+  },
 };
 
 export default function RootLayout({

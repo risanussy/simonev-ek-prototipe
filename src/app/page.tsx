@@ -1,9 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   BadgeCheck,
   ChartSpline,
-  Landmark,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -18,19 +18,26 @@ export default function HomePage() {
         <section className="mesh-surface relative overflow-hidden rounded-[30px] px-6 py-8 text-white md:px-8 md:py-10">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.15),transparent_32%)]" />
           <div className="relative z-10">
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/14 backdrop-blur">
-              <Landmark className="h-6 w-6" />
+            <div className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-2xl bg-white/14 p-2 backdrop-blur">
+              <Image
+                src="/branding/logo.jpg"
+                alt="spectra logo"
+                width={64}
+                height={64}
+                className="h-full w-full rounded-xl object-cover"
+                priority
+              />
             </div>
 
             <p className="mt-8 text-sm font-semibold uppercase tracking-[0.28em] text-emerald-200">
-              SIMONEV Ekonomi Subang
+              spectra
             </p>
             <h1 className="mt-4 max-w-2xl font-[family-name:var(--font-ibm-plex-sans)] text-4xl font-semibold leading-tight md:text-5xl">
               Monitoring program ekonomi daerah dalam satu tampilan yang sederhana.
             </h1>
             <p className="mt-5 max-w-xl text-base leading-8 text-slate-200">
-              Sistem Monitoring dan Pengendalian Program Pembangunan Ekonomi Berbasis
-              Digital untuk BP4D Kabupaten Subang.
+              Platform monitoring dan pengendalian program berbasis digital untuk
+              kebutuhan operasional spectra.
             </p>
 
             <div className="mt-8 space-y-3 text-sm text-slate-100">
@@ -52,12 +59,30 @@ export default function HomePage() {
               <p className="text-sm font-semibold uppercase tracking-[0.26em] text-[color:var(--color-secondary)]">
                 Login Dummy
               </p>
+              <div className="mt-4 flex items-center gap-3">
+                <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl bg-[color:var(--color-muted)] p-1.5">
+                  <Image
+                    src="/branding/logo.jpg"
+                    alt="spectra logo"
+                    width={48}
+                    height={48}
+                    className="h-full w-full rounded-xl object-cover"
+                  />
+                </div>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[color:var(--color-muted-foreground)]">
+                    spectra
+                  </p>
+                  <p className="text-sm text-[color:var(--color-muted-foreground)]">
+                    Akses dashboard utama
+                  </p>
+                </div>
+              </div>
               <h2 className="mt-4 font-[family-name:var(--font-ibm-plex-sans)] text-3xl font-semibold text-[color:var(--color-foreground)]">
                 Masuk ke dashboard.
               </h2>
               <p className="mt-3 text-sm leading-7 text-[color:var(--color-muted-foreground)]">
-                Gunakan kredensial apa saja untuk melihat rancangan awal SIMONEV
-                Ekonomi Subang.
+                Gunakan kredensial apa saja untuk melihat rancangan awal spectra.
               </p>
 
               <form className="mt-8 space-y-5">

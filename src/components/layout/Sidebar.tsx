@@ -1,6 +1,7 @@
 "use client";
 
 import type { Route } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -43,13 +44,25 @@ export function Sidebar({ mobile = false, onClose }: SidebarProps) {
       )}
     >
       <div className="mb-8 flex items-center justify-between gap-3">
-        <div>
-          <p className={cn("text-xs font-semibold uppercase tracking-[0.28em] text-[color:var(--color-secondary)]", mobile && "text-emerald-200")}>
-            BP4D Kabupaten Subang
-          </p>
-          <h1 className={cn("mt-2 font-[family-name:var(--font-ibm-plex-sans)] text-2xl font-semibold text-[color:var(--color-foreground)]", mobile && "text-white")}>
-            SIMONEV Ekonomi
-          </h1>
+        <div className="flex items-center gap-3">
+          <div className={cn("flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl bg-[color:var(--color-muted)] p-1.5", mobile && "bg-white/12")}>
+            <Image
+              src="/branding/logo.jpg"
+              alt="spectra logo"
+              width={48}
+              height={48}
+              className="h-full w-full rounded-xl object-cover"
+              priority
+            />
+          </div>
+          <div>
+            <p className={cn("text-xs font-semibold uppercase tracking-[0.28em] text-[color:var(--color-secondary)]", mobile && "text-emerald-200")}>
+              spectra
+            </p>
+            <h1 className={cn("mt-2 font-[family-name:var(--font-ibm-plex-sans)] text-2xl font-semibold text-[color:var(--color-foreground)]", mobile && "text-white")}>
+              Dashboard
+            </h1>
+          </div>
         </div>
         {mobile ? (
           <button
